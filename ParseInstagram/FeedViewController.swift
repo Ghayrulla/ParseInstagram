@@ -31,12 +31,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         pullData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
-    @IBAction func onLogOut(sender: AnyObject) {
+    @IBAction func logout(sender: AnyObject) {
         PFUser.logOut()
         NSNotificationCenter.defaultCenter().postNotificationName("UserDidLogout", object: nil)
     }
@@ -59,7 +56,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     @IBAction func onCamera(sender: AnyObject) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -94,37 +95,26 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
 
-    
-    func resize(image: UIImage, newSize: CGSize) -> UIImage {
-        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
-        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        resizeImageView.image = image
-        
-        UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-
     func postUserImage(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
         // Create Parse object PFObject
         let post = PFObject(className: "Post")
         
         // Add relevant fields to the object
-        post["media"] = getPFFileFromImage(image)
-    
+        post["media"] = getPFFileFromImage(image) // PFFile column type
+        post["author"] = PFUser.currentUser() // Pointer column type that points to PFUser
+        post["likesCount"] = 0
+        post["commentsCount"] = 0
+
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)
     }
-
-
+    
     func getPFFileFromImage(image: UIImage?) -> PFFile? {
-    // check if image is not nil
-    if let image = image {
-        // get image data and check if that is not nil
-        if let imageData = UIImagePNGRepresentation(image) {
-            return PFFile(name: "image.png", data: imageData)
+        // check if image is not nil
+        if let image = image {
+            // get image data and check if that is not nil
+            if let imageData = UIImagePNGRepresentation(image) {
+                return PFFile(name: "image.png", data: imageData)
             }
         }
         return nil

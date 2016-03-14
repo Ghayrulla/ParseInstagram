@@ -5,7 +5,7 @@
 //  Created by Gary Ghayrat on 3/14/16.
 //  Copyright © 2016 Gary Ghayrat. All rights reserved.
 //
-
+/*
 //import Foundation
 import UIKit
 import Parse
@@ -64,3 +64,4 @@ class Post: NSObject {
         return nil
     }
 }
+*/
