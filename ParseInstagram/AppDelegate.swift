@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://frozen-spire-54912.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.currentUser() != nil {
+            // if there is a logged in user then load the home view controller
+        }
+        
         return true
     }
 

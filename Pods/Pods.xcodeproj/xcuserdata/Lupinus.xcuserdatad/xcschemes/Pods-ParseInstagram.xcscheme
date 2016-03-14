@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '99EE974B546774D33A9F62D3'
+               BlueprintIdentifier = '9D3AB623C8FBC24D2B30285D'
                BlueprintName = 'Pods-ParseInstagram'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_ParseInstagram.framework'>

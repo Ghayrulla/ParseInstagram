@@ -14,6 +14,9 @@
 		CD8303681C96598700CD1187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8303671C96598700CD1187 /* Assets.xcassets */; };
 		CD83036B1C96598700CD1187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8303691C96598700CD1187 /* LaunchScreen.storyboard */; };
 		CD8303731C965B4500CD1187 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8303721C965B4500CD1187 /* LoginViewController.swift */; };
+		CD8303751C973C6800CD1187 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8303741C973C6800CD1187 /* FeedViewController.swift */; };
+		CD8303781C973E9A00CD1187 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8303771C973E9A00CD1187 /* Post.swift */; };
+		CD83037C1C9742E800CD1187 /* FeedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83037B1C9742E800CD1187 /* FeedViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		CD83036A1C96598700CD1187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD83036C1C96598700CD1187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8303721C965B4500CD1187 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CD8303741C973C6800CD1187 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CD8303771C973E9A00CD1187 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CD83037B1C9742E800CD1187 /* FeedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewCell.swift; sourceTree = "<group>"; };
 		FDCFFE2758F68ADC4A2CB702 /* Pods-ParseInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseInstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseInstagram/Pods-ParseInstagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +60,7 @@
 		CD8303541C96598700CD1187 = {
 			isa = PBXGroup;
 			children = (
+				CD8303761C973E2700CD1187 /* Models */,
 				CD83035F1C96598700CD1187 /* ParseInstagram */,
 				CD83035E1C96598700CD1187 /* Products */,
 				86B8A7B0D0348175D176CFAB /* Pods */,
@@ -79,8 +86,18 @@
 				CD8303691C96598700CD1187 /* LaunchScreen.storyboard */,
 				CD83036C1C96598700CD1187 /* Info.plist */,
 				CD8303721C965B4500CD1187 /* LoginViewController.swift */,
+				CD8303741C973C6800CD1187 /* FeedViewController.swift */,
+				CD83037B1C9742E800CD1187 /* FeedViewCell.swift */,
 			);
 			path = ParseInstagram;
+			sourceTree = "<group>";
+		};
+		CD8303761C973E2700CD1187 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD8303771C973E9A00CD1187 /* Post.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		DFE8F1E9EFC258F94A33B044 /* Frameworks */ = {
@@ -216,7 +233,10 @@
 			files = (
 				CD8303731C965B4500CD1187 /* LoginViewController.swift in Sources */,
 				CD8303631C96598700CD1187 /* ViewController.swift in Sources */,
+				CD8303751C973C6800CD1187 /* FeedViewController.swift in Sources */,
 				CD8303611C96598700CD1187 /* AppDelegate.swift in Sources */,
+				CD83037C1C9742E800CD1187 /* FeedViewCell.swift in Sources */,
+				CD8303781C973E9A00CD1187 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
